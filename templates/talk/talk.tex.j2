@@ -1,0 +1,79 @@
+\documentclass[
+    % Get rid of 'pdfpagelabels' warnings.
+    %hyperref={pdfpagelabels=false},
+
+    % Get rid of 'pdfauthor' warnings.
+    usepdftitle=false,
+
+    ]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set the style of the presentation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% No navigation symbols in footer.
+\beamertemplatenavigationsymbolsempty
+
+% Slide number in footer.
+\setbeamertemplate{footline}[frame number]
+
+% Set theme.
+\usetheme{Frankfurt}
+
+% Blocks have round corners and a shadow.
+\useinnertheme[shadow=true]{rounded}
+
+% Set the colour of the blocks and related parts.
+\setbeamercolor{structure}{fg=blue!25!black}
+
+% Use 'nicer' fonts in formulae.
+\usefonttheme{professionalfonts}
+
+\setbeamercovered{transparent}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{packages/packages}
+\input{commands/commands}
+\input{commands/operators}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Title, author and some other bits need to be after '\begin{document}' so
+    % that 'hyperref' doesn't complain.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \title{{{ talk_title }}}
+    {% if talk_subtitle %}
+    \subtitle{{{ talk_subtitle }}}
+    {% endif %}
+    \author[{{ talk_short_author }}]{\textbf{{{ talk_author }}}}
+    \institute{{{ talk_institute }}}
+    \date{{{ talk_date }}}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \include{slides/title/title}
+    % {% if not talk_no_toc and not talk_no_outline %}
+    {% if not talk_no_toc %}
+    \include{slides/toc/toc}
+    {% endif %}
+
+    {% if not talk_no_outline %}
+    \include{slides/toc/outline}
+    {% endif %}
+
+    \include{slides/summary/summary}
+
+    \include{slides/thanks/thanks}
+
+    {%if not talk_no_backup %}
+    \backupbegin
+        \include{slides/backup/backup}
+    \backupend
+    {% endif %}
+
+\end{document}
