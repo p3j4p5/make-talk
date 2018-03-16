@@ -1,0 +1,81 @@
+% Multilingual support for Plain TeX or LaTeX
+% http://ctan.org/pkg/babel)
+\usepackage[
+    british,  % Language definition.
+    ]{babel}
+
+% Input encoding to be used (for german umlauts etc.).
+\usepackage[utf8x]{inputenc}
+
+% Mathematical symbols, letters and extras.
+% See also:
+% http://ctan.org/pkg/amsmath
+% http://ctan.org/pkg/amsfonts
+% http://www.ctan.org/tex-archive/macros/latex/contrib/bbm
+\usepackage{amsmath, amsfonts, amssymb, bbm}
+
+% Highly configurable displaying of number and SI units.
+% http://ctan.org/pkg/siunitx
+\usepackage[
+    per-mode=symbol,               % When using \per, use a slash as delimiter.
+    exponent-product=\cdot,        % When using 1eX notation, use \cdot as
+                                   % delimiter.
+    unit-optional-argument=true,   % Activate the optional argument usage for
+                                   % units, e.g.: \metre[10] -> 10 m
+    free-standing-units=true,      % The free-standing-units option controls
+                                   % whether the unit macros exist outside of
+                                   % the \si and \SI arguments.
+    use-xspace=true,               % Use xspace to set the spacing (after a
+                                   % unit) correctly.
+    number-unit-product=\text{~},  % Put a protected space between number and
+                                   % unit.
+    ]{siunitx}
+
+% Use 'longtable' to write tables that continue to the next page and more.
+% http://www.ctan.org/pkg/longtable
+\usepackage{longtable}
+
+% Flexible handling of verbatim text including.
+% http://www.ctan.org/pkg/fancyvrb
+\usepackage{fancyvrb}
+
+% Package to make slashed letters.
+\usepackage{slashed}
+
+% Automatically (correct) spaces for macros.
+% http://ctan.org/pkg/xspace
+\usepackage{xspace}
+
+% Colour control for LaTeX documents.
+% http://www.ctan.org/pkg/color
+\usepackage{color}
+
+% Verbatim with URL-sensitive line breaks.
+% http://www.ctan.org/pkg/url
+\usepackage{url}
+
+% NON-italic greek letters
+\usepackage{upgreek}
+
+%% Use Latin modern fonts:
+%% (If you don't use it, you might need:
+%%    \RequirePackage{fix-cm}
+%% in front of \documentclass{...} to fix issues with Computer Modern fonts.)
+%% http://www.ctan.org/tex-archive/info/lmodern
+%\usepackage{lmodern}
+
+% Package to place pictures side by side.
+% http://www.ctan.org/pkg/subfig
+\usepackage[
+    caption=false,  % If true, use the given settings for the 'caption'
+                    % package. If 'caption' package is loaded, use the settings
+                    % given there.
+    ]{subfig}
+
+
+% Control over footnotes.
+% http://www.ctan.org/pkg/footmisc
+\usepackage[
+    bottom,       % Force the footnotes to be on the bottom on the page.
+    flushmargin,  % Flush the footnotes.
+    ]{footmisc}
