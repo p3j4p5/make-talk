@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Easier writing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\qq}[1]{``#1''}
+\newcommand{\minus}{\mbox{-}}
+
+\newcommand{\wrt}{with respect to\xspace}
+\newcommand{\eg}{e.\,g.\xspace}
+\newcommand{\Eg}{E.\,g.\xspace}
+\newcommand{\ie}{i.\,e.\xspace}
+\newcommand{\Ie}{I.\,e.\xspace}
+\newcommand{\cf}{cf.\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General mathematical definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ord}[1]{%
+    \ensuremath{%
+        \mathcal{O}\left(#1\right)%
+        }\xspace%
+    }
+\newcommand{\gaus}[3]{%
+    \ensuremath{%
+        \mathcal{N}\left(#1;#2,#3\right)%
+        }\xspace%
+    }
+\newcommand{\set}[1]{%
+    \ensuremath{%
+        \left\{#1\right\}%
+        }\xspace%
+    }
+\newcommand{\abs}[1]{%
+    \ensuremath{%
+        \left\lvert#1\right\rvert%
+        }\xspace%
+    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Beamer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Commands to define the backup of the presentation.
+% Allows to count the backup slides 'correctly'.
+\newcommand{\backupbegin}{%
+    \newcounter{framenumberbeforeappendix}
+    \setcounter{framenumberbeforeappendix}{\value{framenumber}}
+    }
+\newcommand{\backupend}{%
+    \addtocounter{framenumberbeforeappendix}{-\value{framenumber}}
+    \addtocounter{framenumber}{\value{framenumberbeforeappendix}}
+    }
