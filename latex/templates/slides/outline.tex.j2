@@ -1,0 +1,15 @@
+% Show an outline before every section:
+\AtBeginSection[]{
+    \begin{frame}
+        \frametitle{Outline}
+        \begin{columns}
+            \begin{column}{.45\textwidth}
+                % Show table of contents with current section highlighted
+                \tableofcontents[currentsection]
+            \end{column}
+            \begin{column}{.55\textwidth}
+                %\includegraphics[width=\textwidth]{}
+            \end{column}
+        \end{columns}
+    \end{frame}
+}
