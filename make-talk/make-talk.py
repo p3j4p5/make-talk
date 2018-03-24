@@ -66,6 +66,14 @@ def parse_args():
         )
 
     init.add_argument(
+        '-o', '--no-outline',
+        action='store_true',
+        default=False,
+        help='Do not create outline slides (only relevant if TOC is created). '
+             'Overrides parameter set in config file. (default = %(default)s)'
+        )
+
+    init.add_argument(
         '-s', '--short-author',
         metavar='SHORT',
         help="Set the talk's short author field. "
