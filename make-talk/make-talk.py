@@ -37,6 +37,14 @@ def parse_args():
         )
 
     init.add_argument(
+        '-b', '--no-backup',
+        action='store_true',
+        default=False,
+        help='Do not create backup slides. '
+             'Overrides parameter set in config file. (default = %(default)s)'
+        )
+
+    init.add_argument(
         '-c', '--config',
         metavar="CONFIG",
         help='Path to config file storing parameters like author name and '
