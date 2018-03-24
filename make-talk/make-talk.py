@@ -77,6 +77,13 @@ def parse_args():
         help='Set title talk. Overrides parameter set in config file.'
         )
 
+    init.add_argument(
+        '-T', '--no-toc',
+        default=False,
+        help='Do not create table of content and outline slides. '
+             'Overrides parameter set in config file. (default = %(default)s)'
+        )
+
     args = parser.parse_args()
 
     if args.commands == 'init':
