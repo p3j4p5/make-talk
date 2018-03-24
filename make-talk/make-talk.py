@@ -45,6 +45,13 @@ def parse_args():
         )
 
     init.add_argument(
+        '-d', '--date',
+        metavar="DATE",
+        help="Set talk date. Overrides parameter set in config file. "
+             "(default = Latex's \\today)"
+        )
+
+    init.add_argument(
         '-i', '--institute',
         metavar='INSTITUTE',
         help='Set talk institute. Overrides parameter set in config file.'

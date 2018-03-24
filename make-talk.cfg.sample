@@ -3,4 +3,5 @@ author = AUTHOR
 short_author = SHORTAUTHOR
 title = TITLE
 subtitle = SUBTITLE
+date = DATE
 institute = INSTITUTE
