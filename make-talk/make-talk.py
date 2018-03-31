@@ -22,7 +22,9 @@ def parse_args():
     subparsers = parser.add_subparsers(
         help='Commands to create and maintain LaTeX Beamer talk structure.',
         description='Available make-talk commands',
-        dest='commands',
+        # Using uncodumented argument 'dest' storing the selected subparser,
+        # i.e. command.
+        dest='command',
         )
 
     init = subparsers.add_parser(
@@ -94,7 +96,7 @@ def parse_args():
 
     args = parser.parse_args()
 
-    if args.commands == 'init':
+    if args.command == 'init':
         if not args.date:
             args.date = '\\today'
 
