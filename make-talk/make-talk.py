@@ -16,6 +16,15 @@ def main():
 
     args = parse_args()
 
+    if args.command == 'init':
+        init(args)
+
+
+def init(args):
+    # TODO: docstring
+
+    mkdir_p(abs_path(args.directory))
+
 
 def parse_args():
     """Parse command line arguments."""
