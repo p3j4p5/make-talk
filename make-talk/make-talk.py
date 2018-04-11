@@ -34,6 +34,15 @@ def parse_args():
         )
 
     init.add_argument(
+        'directory',
+        metavar='DIRECTORY',
+        nargs='?',
+        default='./',
+        help='Set target directory for LaTeX Beamer presentation. '
+             '(default = %(default)s)'
+        )
+
+    init.add_argument(
         '-a', '--author',
         metavar='AUTHOR',
         help='Set talk author. Overrides parameter set in config file.'
