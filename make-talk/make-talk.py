@@ -1,6 +1,7 @@
 """Creates a skelton for and manges a LaTeX Beamer presentation."""
 
 import argparse
+import errno
 import os
 
 
@@ -130,6 +131,23 @@ def abs_path(path):
         path = os.path.realpath(os.path.expandvars(os.path.expanduser(path)))
 
     return path
+
+
+def mkdir_p(path):
+    """Create directory tree
+
+    Mimicking 'mkdir -p <path>' in the shell.
+
+    Args:
+        path: String representing the path to be created.
+    """
+    try:
+        os.makedirs(path)
+    except OSError as exc:
+        if exc.errno == errno.EEXIST and os.path.isdir(path):
+            pass
+        else:
+            raise
 
 
 if __name__ == '__main__':
