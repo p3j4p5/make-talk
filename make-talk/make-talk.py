@@ -29,12 +29,13 @@ def parse_args():
 
     init = subparsers.add_parser(
         'init',
-        help='Create a new empty LaTeX Beamer presentation'
+        # TODO: Reinitialise?
+        help='Create an empty LaTeX Beamer presentation'
         )
 
     init.add_argument(
         '-a', '--author',
-        metavar="AUTHOR",
+        metavar='AUTHOR',
         help='Set talk author. Overrides parameter set in config file.'
         )
 
@@ -48,7 +49,7 @@ def parse_args():
 
     init.add_argument(
         '-c', '--config',
-        metavar="CONFIG",
+        metavar='CONFIG',
         help='Path to config file storing parameters like author name and '
              'talk title, to set up talk. Command line parameters have '
              'precedence over config file parameters.'
@@ -56,7 +57,7 @@ def parse_args():
 
     init.add_argument(
         '-d', '--date',
-        metavar="DATE",
+        metavar='DATE',
         help="Set talk date. Overrides parameter set in config file. "
              "(default = Latex's \\today)"
         )
