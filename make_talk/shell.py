@@ -1,8 +1,9 @@
 """Creates a skelton for and manges a LaTeX Beamer presentation."""
 
 import argparse
-import errno
-import os
+
+import make_talk
+from make_talk import cmds
 
 
 DESCRIPTION = (
@@ -17,19 +18,17 @@ def main():
     args = parse_args()
 
     if args.command == 'init':
-        init(args)
-
-
-def init(args):
-    # TODO: docstring
-
-    mkdir_p(abs_path(args.directory))
+        cmds.init(args)
 
 
 def parse_args():
     """Parse command line arguments."""
 
     parser = argparse.ArgumentParser(description=DESCRIPTION)
+    parser.add_argument('--version',
+                        action='version',
+                        version=make_talk.__version__)
+
     subparsers = parser.add_subparsers(
         help='Commands to create and maintain LaTeX Beamer talk structure.',
         description='Available make-talk commands',
@@ -122,41 +121,6 @@ def parse_args():
             args.date = '\\today'
 
     return args
-
-
-def abs_path(path):
-    """Return absolute path from given path string
-
-    Expands '~' and all '$' variables, and prepends the current working
-    directory in case the given path is relative.
-
-    Args:
-        path: String representing a (relative) path.
-
-    Returns:
-        String representing absolute path with all variables expanded.
-    """
-    if path:
-        path = os.path.realpath(os.path.expandvars(os.path.expanduser(path)))
-
-    return path
-
-
-def mkdir_p(path):
-    """Create directory tree
-
-    Mimicking 'mkdir -p <path>' in the shell.
-
-    Args:
-        path: String representing the path to be created.
-    """
-    try:
-        os.makedirs(path)
-    except OSError as exc:
-        if exc.errno == errno.EEXIST and os.path.isdir(path):
-            pass
-        else:
-            raise
 
 
 if __name__ == '__main__':
