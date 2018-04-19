@@ -66,13 +66,13 @@ def parse_args():
              'Overrides parameter set in config file. (default = %(default)s)'
         )
 
-    init.add_argument(
-        '-c', '--config',
-        metavar='CONFIG',
-        help='Path to config file storing parameters like author name and '
-             'talk title, to set up talk. Command line parameters have '
-             'precedence over config file parameters.'
-        )
+    #init.add_argument(
+        #'-c', '--config',
+        #metavar='CONFIG',
+        #help='Path to config file storing parameters like author name and '
+             #'talk title, to set up talk. Command line parameters have '
+             #'precedence over config file parameters.'
+        #)
 
     init.add_argument(
         '-d', '--date',
