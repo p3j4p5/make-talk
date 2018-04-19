@@ -70,7 +70,7 @@ def parse_args():
         '-d', '--date',
         metavar='DATE',
         help="Set talk date. Overrides parameter set in config file. "
-             "(default = Latex's \\today)"
+             "(default = LaTeX's \\today)"
         )
 
     init.add_argument(
